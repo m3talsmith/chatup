@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package chatup;
+
+import "google/protobuf/empty.proto";
+
+service ChatupApi {
+    rpc Send (Message) returns (google.protobuf.Empty) {}
+}
+
+message Message {
+    string from = 1;
+    uint64 timestamp = 2;
+    bytes content = 3;
+}
